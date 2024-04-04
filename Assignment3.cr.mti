@@ -1,0 +1,28 @@
+C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/wrapper.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/wrapper.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity wrapper
+-- Compiling architecture example of wrapper
+
+} {} {}} C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/FP_Adder.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/FP_Adder.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity FP_Adder
+-- Compiling architecture Behavioral of FP_Adder
+
+} {} {}} C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/LED_decoder.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/LED_decoder.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity LED_decoder
+-- Compiling architecture decoder of LED_decoder
+
+} {} {}}

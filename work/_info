@@ -1,0 +1,172 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/natha/Downloads
+Efp_adder
+Z0 w1712266677
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dC:/Users/natha/Documents/McGill/School/ECSE222/Assignment3
+Z5 8C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/FP_Adder.vhd
+Z6 FC:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/FP_Adder.vhd
+l0
+L4
+V94:JC@0E`Xh^[9gWjGXQT1
+!s100 :9jS@0PZJ>DR;k7hZA`:<3
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1712267189
+!i10b 1
+Z9 !s108 1712267189.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/FP_Adder.vhd|
+Z11 !s107 C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/FP_Adder.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Abehavioral
+R1
+R2
+R3
+DEx4 work 8 fp_adder 0 22 94:JC@0E`Xh^[9gWjGXQT1
+l20
+L10
+Vo7E0W6:mgc3fc7aco?QDR1
+!s100 lgW<GJjzlX=gKNUbfM1_<3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Efp_adder_vhd_tst
+Z14 w1712267180
+R2
+R3
+R4
+Z15 8C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/simulation/modelsim/FP_Adder.vht
+Z16 FC:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/simulation/modelsim/FP_Adder.vht
+l0
+L30
+V4n3ojgLh7==@aX_L`E]551
+!s100 DOF:d:V<Kb7S<cV^ogmm@0
+R7
+32
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/simulation/modelsim/FP_Adder.vht|
+Z18 !s107 C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/simulation/modelsim/FP_Adder.vht|
+!i113 1
+R12
+R13
+Afp_adder_arch
+R2
+R3
+Z19 DEx4 work 16 fp_adder_vhd_tst 0 22 4n3ojgLh7==@aX_L`E]551
+l45
+L32
+VaiAg3TUMmSUTcAJ@PPLSM3
+!s100 9Ja1oCOBmIRTJC92acM^T1
+R7
+32
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Eled_decoder
+Z20 w1712266432
+R1
+R2
+R3
+R4
+Z21 8C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/LED_decoder.vhd
+Z22 FC:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/LED_decoder.vhd
+l0
+L5
+Vdb4M<<`K>ZNeE9jQ=BRCK0
+!s100 N68JHXGWZbKELA^`N<K1U1
+R7
+32
+R8
+!i10b 1
+R9
+Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/LED_decoder.vhd|
+Z24 !s107 C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/LED_decoder.vhd|
+!i113 1
+R12
+R13
+Adecoder
+R1
+R2
+R3
+DEx4 work 11 led_decoder 0 22 db4M<<`K>ZNeE9jQ=BRCK0
+l13
+L12
+VEzQn=`NgjYg=hkfCRgjo;3
+!s100 DI8<8U;C=3ea@nZ@OHGV32
+R7
+32
+R8
+!i10b 1
+R9
+R23
+R24
+!i113 1
+R12
+R13
+Ewrapper
+R20
+R1
+R2
+R3
+R4
+Z25 8C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/wrapper.vhd
+Z26 FC:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/wrapper.vhd
+l0
+L5
+VeOKG_;IjU=?WCQK1kXDbX3
+!s100 1DA:FEQIY?fDPZW7:?OA00
+R7
+32
+R8
+!i10b 1
+R9
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/wrapper.vhd|
+Z28 !s107 C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/wrapper.vhd|
+!i113 1
+R12
+R13
+Aexample
+R1
+R2
+R3
+DEx4 work 7 wrapper 0 22 eOKG_;IjU=?WCQK1kXDbX3
+l35
+L15
+VRF2HAaS<P9IX>j0dUiMh<0
+!s100 d91HG25O10G_PEn1?c[0@1
+R7
+32
+R8
+!i10b 1
+R9
+R27
+R28
+!i113 1
+R12
+R13
