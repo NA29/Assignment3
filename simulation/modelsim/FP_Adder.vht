@@ -61,9 +61,35 @@ always : PROCESS
 -- (        )                                                 
 -- variable declarations                                      
 BEGIN        
-	A <= "01110111"; --104
-	B <= "01110111"; --24                                                 
-        -- code executes for every event on sensitivity list  
+	
+	A <= "01101101"; --104
+	B <= "01011100"; --24  
+	wait for 10 ns;
+
+	A <= "01110111";
+	B <= "01110111";                                                  
+	wait for 10 ns;
+
+	A <= "01111000";
+	B <= "11111000";                                                  
+	wait for 10 ns;
+
+	A <= "01111101";
+	B <= "01110111";                                                  
+	wait for 10 ns;
+
+	A <= "01010000";
+	B <= "01100000";                                                  
+	wait for 10 ns;
+
+	A <= "11111000";
+	B <= "01010111";                                                  
+	wait for 10 ns;
+
+	A <= "01111000";
+	B <= "01100000";                                                  
+	wait for 10 ns;
+	
 WAIT;                                                        
 END PROCESS always;                                          
 END FP_Adder_arch;

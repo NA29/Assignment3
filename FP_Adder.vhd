@@ -87,7 +87,7 @@ BEGIN
 		-- this condition checks if A and B are positive infinity, the sum is positive infinity
 		elsif (E_A="1111" and init_manta="000" and signA='0') and (E_B="1111" and init_mantb="000" and signB='0') then
 			easywin<='1';
-			intersum1<="00000001";
+			intersum1<="01111000";
 			report "The sum is positive infinity";
 			
 		-- this condition checks if A is negative infinity and B is positive infinity, then the sum is NaN
@@ -99,31 +99,31 @@ BEGIN
 		-- this condition checks if A is negative infinity and B is negative infinity, the sum is negative infinity
 		elsif (E_A="1111" and init_manta="000" and signA='1') and (E_B="1111" and init_mantb="000" and signB='1') then
 			easywin<='1';
-			intersum1<="10000001";
+			intersum1<="11111000";
 			report "The sum is negative infinity";
 		
 		-- this condition checks if A is negative infinity and B is a real number, the sum is negative infinity
 		elsif (E_A="1111" and init_manta="000" and signA='1') then
 			easywin<='1';
-			intersum1<="10000001";
+			intersum1<="11111000";
 			report "The sum is negative infinity";
 		
 		-- this condition checks if A is positive infinity and B is a real number, the sum is positive infinity
 		elsif (E_A="1111" and init_manta="000" and signA='0') then
 			easywin<='1';
-			intersum1<="00000001";
+			intersum1<="01111000";
 			report "The sum is positive infinity";
 		
 		-- this condition checks if B is negative infinity and A is a real number, the sum is negative infinity
 		elsif (E_B="1111" and init_mantb="000" and signB='1') then
 			easywin<='1';
-			intersum1<="10000001";
+			intersum1<="11111000";
 			report "The sum is negative infinity";
 		
 		-- this condition checks if B is positive infinity and A is a real number, the sum is positive infinity
 		elsif (E_B="1111" and init_mantb="000" and signB='0') then
 			easywin<='1';
-			intersum1<="00000001";
+			intersum1<="01111000";
 			report "The sum is positive infinity";
 		
 		-- this condition checks if A is equal to 0, the sum is B
@@ -184,59 +184,56 @@ BEGIN
 	end process;
 
 			
-	-- summing will process the mantissas to obtain the sum (by adding or substracting) 
-	summing: process (signA,signB, manta2,mantb2,easywin)
-	
-	variable mantb2_neg : unsigned(4 downto 0);
-	variable sum_neg: unsigned(4 downto 0);
-	variable manta2_neg : unsigned(4 downto 0);
-	
+		-- The 'summing' process combines mantissas while considering the sign of the inputs.
+	summing: process (signA, signB, manta2, mantb2, easywin)
+		 variable mantb2_complement: unsigned(4 downto 0);
+		 variable result_mantissa: unsigned(4 downto 0);
+		 variable manta2_complement: unsigned(4 downto 0);
 	begin
-		-- to store the complements for two's complement addition when negative
-
-		mantb2_neg:= not mantb2; 
-		manta2_neg:= not manta2;
-		
-		if easywin='0' then
-			if (signA ='0') and (signB ='0') then -- if both A and B are positive
-					sum_mant1 <= manta2 + mantb2; -- add the mantissas
-			
-			elsif signA='1' and signB='1' then -- if both A and B are negative
-					sum_mant1 <= manta2 + mantb2; -- add the mantissas
-
-			elsif signA='0' and signB='1' then -- if A is positive and B is negative
-					mantb2_neg:=mantb2_neg+1;
-					sum_neg:=manta2+mantb2_neg; -- add the mantissas with two's complement
-					if sum_neg(4)='1' then -- if the sum is negative, turn back into positive
-						sum_neg:=not sum_neg;
-						sum_neg:= sum_neg+1;
-						sum_mant1<=sum_neg;
+		 -- Prepare two's complement values for potential subtraction
+		 mantb2_complement := not mantb2;
+		 manta2_complement := not manta2;
+		 
+		 -- Proceed with mantissa operations only if no edge case is detected
+		 if easywin = '0' then
+			  -- Add mantissas when both numbers have the same sign
+			  if (signA = '0') and (signB = '0') then
+					sum_mant1 <= manta2 + mantb2;
+			  elsif (signA = '1') and (signB = '1') then
+					sum_mant1 <= manta2 + mantb2;
+			  -- Perform two's complement addition for numbers with different signs
+			  elsif (signA = '0') and (signB = '1') then
+					mantb2_complement := mantb2_complement + 1;
+					result_mantissa := manta2 + mantb2_complement;
+					-- Correct the sign if the result is negative
+					if result_mantissa(4) = '1' then
+						 result_mantissa := not result_mantissa + 1;
+						 sum_mant1 <= result_mantissa;
 					else
-						sum_mant1<=sum_neg;
+						 sum_mant1 <= result_mantissa;
 					end if;
-					
-			elsif signA='1' and signB='0' then -- if B is positive and A is negative
-					manta2_neg:=manta2_neg+1;
-					sum_neg:=mantb2+manta2_neg; -- add the mantissas with two's complement
-					if sum_neg(4)='1' then -- if the sum is negative, turn back into positive
-						sum_neg:=not sum_neg;
-						sum_neg:= sum_neg+1;
-						sum_mant1<=sum_neg;
+			  elsif (signA = '1') and (signB = '0') then
+					manta2_complement := manta2_complement + 1;
+					result_mantissa := mantb2 + manta2_complement;
+					-- Correct the sign if the result is negative
+					if result_mantissa(4) = '1' then
+						 result_mantissa := not result_mantissa + 1;
+						 sum_mant1 <= result_mantissa;
 					else
-						sum_mant1<=sum_neg;
+						 sum_mant1 <= result_mantissa;
 					end if;
-					
-			else -- to remove latches
-					sum_mant1<="00000";
-			end if;
-			
-		else -- to remove latches
-			sum_mant1<="00000";
-		end if;
-		
+			  else
+					-- Default case for latches
+					sum_mant1 <= (others => '0');
+			  end if;
+		 else
+			  -- Default sum for edge cases
+			  sum_mant1 <= (others => '0');
+		 end if;
 	end process;
+
 	
-	-- recombining will process the final mantissa and exponent based on the summed mantissa
+-- recombining will process the final mantissa and exponent based on the summed mantissa
 	recombining: process(sum_e1,sum_mant1,final_sign, easywin)
 	
 	variable Sum_E: unsigned(3 downto 0);
@@ -291,32 +288,33 @@ BEGIN
 			END IF;
 	end process;
 
+
+
 	-- final_assignment defines the final sum depending on the particular case
-	final_assignment: process(easywin, intersum1,intersum2, final_sign, sum_e2, sum_mant2,sum_mant1)
-	
+	final_assignment: process(easywin, intersum1, intersum2, final_sign, sum_e2, sum_mant2, sum_mant1)
 	begin
-	
-		-- if an edge case is met, easywin is set to 1 and sum is equal to the defined sum
-		if easywin = '1' then
-			Sum <= intersum1;
-		-- if the summed mantissa is set to 0, we also reach an edge case
-		elsif sum_mant1="00000" then
-			Sum<=intersum2;
-		-- processing additional edge cases
-		elsif sum_e2="1111" and sum_mant2="00000" and final_sign='0' then
-			Sum<="00000001";
-			report "The sum is positive infinity";
-		elsif sum_e2="1111" and sum_mant2="00000" and final_sign='1' then
-			Sum<="10000001";
-			report "The sum is negative infinity";
-		elsif sum_e2="1111" and sum_mant2/="00000" then
-			Sum<="11111111";
-			report "The sum is NaN";
-		-- this is in the case where we satisfy no edge cases, we combined S,E and M
-		else
-			Sum <= std_logic_vector(final_sign & sum_e2 & sum_mant2(2 downto 0));
-		end if;
-		
+		 -- Handling NaN and infinities first due to their specific nature
+		 if sum_e2 = "1111" then
+			  if sum_mant2 = "00000" then
+					-- Exponent overflow represents infinity; the sign bit determines if it's positive or negative
+					if final_sign = '0' then
+						 Sum <= "00000001"; -- Positive infinity
+					else
+						 Sum <= "10000001"; -- Negative infinity
+					end if;
+			  else
+					Sum <= "11111111"; -- NaN, exponent is maxed and mantissa is non-zero
+			  end if;
+		 -- Checking for edge cases flagged by 'easywin'
+		 elsif easywin = '1' then
+			  Sum <= intersum1; -- Use precomputed result for special cases
+		 -- Checking for zero mantissa which could indicate zero or an edge case needing intersum2
+		 elsif sum_mant1 = "00000" then
+			  Sum <= intersum2; -- Specific edge case result precomputed
+		 else
+			  -- Normal operation: combine sign, exponent, and mantissa for the result
+			  Sum <= std_logic_vector(final_sign & sum_e2 & sum_mant2(2 downto 0));
+		 end if;
 	end process;
-	
+
 END Behavioral;

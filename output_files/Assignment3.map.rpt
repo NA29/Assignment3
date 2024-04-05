@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Assignment3
-Thu Apr 04 17:39:48 2024
+Fri Apr 05 16:03:54 2024
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -43,7 +43,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Apr 04 17:39:48 2024       ;
+; Analysis & Synthesis Status     ; Successful - Fri Apr 05 16:03:54 2024       ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                   ; Assignment3                                 ;
 ; Top-level Entity Name           ; FP_Adder                                    ;
@@ -155,8 +155,8 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 16          ;
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -166,40 +166,40 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                   ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                            ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+---------+
-; FP_Adder.vhd                     ; yes             ; User VHDL File  ; C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/FP_Adder.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                           ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                    ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------+---------+
+; FP_Adder.vhd                     ; yes             ; User VHDL File  ; C:/Users/ipman/Desktop/Assignment3/FP_Adder.vhd ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 98          ;
-;                                             ;             ;
-; Combinational ALUT usage for logic          ; 148         ;
-;     -- 7 input functions                    ; 1           ;
-;     -- 6 input functions                    ; 47          ;
-;     -- 5 input functions                    ; 30          ;
-;     -- 4 input functions                    ; 28          ;
-;     -- <=3 input functions                  ; 42          ;
-;                                             ;             ;
-; Dedicated logic registers                   ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 24          ;
-;                                             ;             ;
-; Total DSP Blocks                            ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; sum_e2[0]~0 ;
-; Maximum fan-out                             ; 29          ;
-; Total fan-out                               ; 694         ;
-; Average fan-out                             ; 3.54        ;
-+---------------------------------------------+-------------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimate of Logic utilization (ALMs needed) ; 109        ;
+;                                             ;            ;
+; Combinational ALUT usage for logic          ; 163        ;
+;     -- 7 input functions                    ; 1          ;
+;     -- 6 input functions                    ; 53         ;
+;     -- 5 input functions                    ; 39         ;
+;     -- 4 input functions                    ; 24         ;
+;     -- <=3 input functions                  ; 46         ;
+;                                             ;            ;
+; Dedicated logic registers                   ; 0          ;
+;                                             ;            ;
+; I/O pins                                    ; 24         ;
+;                                             ;            ;
+; Total DSP Blocks                            ; 0          ;
+;                                             ;            ;
+; Maximum fan-out node                        ; A[7]~input ;
+; Maximum fan-out                             ; 27         ;
+; Total fan-out                               ; 771        ;
+; Average fan-out                             ; 3.65       ;
++---------------------------------------------+------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -207,7 +207,7 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |FP_Adder                  ; 148 (148)           ; 0 (0)                     ; 0                 ; 0          ; 24   ; 0            ; |FP_Adder           ; FP_Adder    ; work         ;
+; |FP_Adder                  ; 163 (163)           ; 0 (0)                     ; 0                 ; 0          ; 24   ; 0            ; |FP_Adder           ; FP_Adder    ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -232,10 +232,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |FP_Adder|sum_e1[3]        ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |FP_Adder|sum_e1[1]        ;
 ; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |FP_Adder|sum_mant1[0]     ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |FP_Adder|sum_e2[3]        ;
-; 17:1               ; 6 bits    ; 66 LEs        ; 66 LEs               ; 0 LEs                  ; No         ; |FP_Adder|Sum              ;
+; 15:1               ; 6 bits    ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |FP_Adder|Sum              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -244,24 +244,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 148                         ;
+; arriav_lcell_comb     ; 163                         ;
 ;     arith             ; 17                          ;
 ;         0 data inputs ; 5                           ;
 ;         5 data inputs ; 12                          ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 122                         ;
+;     normal            ; 137                         ;
 ;         2 data inputs ; 12                          ;
-;         3 data inputs ; 17                          ;
-;         4 data inputs ; 28                          ;
-;         5 data inputs ; 18                          ;
-;         6 data inputs ; 47                          ;
+;         3 data inputs ; 21                          ;
+;         4 data inputs ; 24                          ;
+;         5 data inputs ; 27                          ;
+;         6 data inputs ; 53                          ;
 ;     shared            ; 8                           ;
 ;         2 data inputs ; 8                           ;
 ; boundary_port         ; 24                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 11.70                       ;
-; Average LUT depth     ; 10.64                       ;
+; Max LUT depth         ; 12.70                       ;
+; Average LUT depth     ; 11.29                       ;
 +-----------------------+-----------------------------+
 
 
@@ -270,7 +270,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -280,31 +280,31 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Thu Apr 04 17:39:42 2024
+    Info: Processing started: Fri Apr 05 16:03:37 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Assignment3 -c Assignment3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file wrapper.vhd
-    Info (12022): Found design unit 1: wrapper-example File: C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/wrapper.vhd Line: 15
-    Info (12023): Found entity 1: wrapper File: C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/wrapper.vhd Line: 5
+    Info (12022): Found design unit 1: wrapper-example File: C:/Users/ipman/Desktop/Assignment3/wrapper.vhd Line: 15
+    Info (12023): Found entity 1: wrapper File: C:/Users/ipman/Desktop/Assignment3/wrapper.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file led_decoder.vhd
-    Info (12022): Found design unit 1: LED_decoder-decoder File: C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/LED_decoder.vhd Line: 12
-    Info (12023): Found entity 1: LED_decoder File: C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/LED_decoder.vhd Line: 5
+    Info (12022): Found design unit 1: LED_decoder-decoder File: C:/Users/ipman/Desktop/Assignment3/LED_decoder.vhd Line: 12
+    Info (12023): Found entity 1: LED_decoder File: C:/Users/ipman/Desktop/Assignment3/LED_decoder.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file fp_adder.vhd
-    Info (12022): Found design unit 1: FP_Adder-Behavioral File: C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/FP_Adder.vhd Line: 10
-    Info (12023): Found entity 1: FP_Adder File: C:/Users/natha/Documents/McGill/School/ECSE222/Assignment3/FP_Adder.vhd Line: 4
+    Info (12022): Found design unit 1: FP_Adder-Behavioral File: C:/Users/ipman/Desktop/Assignment3/FP_Adder.vhd Line: 10
+    Info (12023): Found entity 1: FP_Adder File: C:/Users/ipman/Desktop/Assignment3/FP_Adder.vhd Line: 4
 Info (12127): Elaborating entity "FP_Adder" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 172 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 187 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 148 logic cells
+    Info (21061): Implemented 163 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4867 megabytes
-    Info: Processing ended: Thu Apr 04 17:39:48 2024
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 4858 megabytes
+    Info: Processing ended: Fri Apr 05 16:03:54 2024
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:12
 
 
